@@ -38,7 +38,7 @@ Below is a minimal working `docker-compose.yml`. Make sure to replace the `volum
 ```
 services:
   pw-settings-view:
-    image: docker.io/bostrt/palworld-settings-view:latest
+    image: docker.io/bostrt/palworld-settings-web-view:latest
     pull_policy: always
     restart: unless-stopped
     container_name: palworld-settings-web-view
