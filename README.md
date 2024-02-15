@@ -6,7 +6,7 @@ This is a single page web app that shows your Palworld dedicated server settings
 
 ![Screenshot](./screen.png)
 
-Here are a couple reworld examples:
+Here are a couple real world examples:
 
 - https://depresso.palworld.lol
 - https://kingpaca.palworld.lol
@@ -35,8 +35,6 @@ Docker one-liner. Make sure to replace `-v` with the correct path to your palwor
 $ docker run --name palworld-settings-web-view  -d -p 8000:8000 -v ./palworld/Pal/Saved:/palworld:ro docker.io/bostrt/palworld-settings-view:latest
 $ docker logs palworld-settings-web-view
 ```
-
-## Hide 
 
 ## Docker Compose
 
