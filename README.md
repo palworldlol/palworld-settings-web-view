@@ -1,8 +1,15 @@
 # Palworld Settings Web View
 
+*Developed by https://palworld.lol*
+
 This is a single page web app that shows your Palworld dedicated server settings. It shows all settings and which ones are different than default values.
 
 ![Screenshot](./screen.png)
+
+Here are a couple reworld examples:
+
+- https://depresso.palworld.lol
+- https://kingpaca.palworld.lol
 
 ## Configuration
 
