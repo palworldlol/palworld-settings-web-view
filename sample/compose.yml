@@ -1,0 +1,11 @@
+services:
+  pw-settings-view:
+    image: docker.io/bostrt/palworld-settings-view:latest
+    pull_policy: always
+    restart: unless-stopped
+    container_name: pw-settings-view
+    ports:
+      - 8000:8000/tcp
+    volumes:
+      - ./palworld/Pal/Saved:/palworld:ro
+
