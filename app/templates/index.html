@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Palworld Server Configurations</title>
+    <link id="favicon" rel="icon" type="image/x-icon" href="{{ url_for('static', path='/favicon.ico' )}}"/>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css" />
+</head>
+
+<body>
+    <header class="container-fluid">
+        <h1>Palworld Server Settings</h1>
+
+        <article>
+        <p>{{ server_name }}</p>
+        <small>{{ server_desc }}</small>
+    </article>
+    </header>
+    <main class="grid container-fluid">
+        <article>
+            <hgroup>
+                <h3 class="pico-color-jade-400">Modified Settings</h3>
+                <p>Settings changed on this Palworld server</p>
+            </hgroup>
+
+            {% if changed | length > 0 %}
+            <table calss="striped">
+                <thead data-theme="light">
+                    <th scope="col">Property</th>
+                    <th scope="col">Current Value</th>
+                    <th scope="col">Default Value</th>
+                </thead>
+                <tbody>
+                    {% for item in changed %}
+                    <tr>
+                        <td>{{ item.description }}<span data-tooltip="{{item.property}}"
+                                data-placement="right"><sub> (?)</sub></span></td>
+                        <td><ins>{{ item.new_value }}</ins></td>
+                        <td><del>{{ item.default }}</del></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <strong>No modifications</strong>
+            <img src="{{ url_for('static', path='/chillet.png') }}" />
+            {% endif %}
+        </article>
+        <article>
+            <hgroup>
+                <h3>Default Settings</h3>
+                <p>Settings that are unchanged on this Palworld server</p>
+            </hgroup>
+            <table class="striped">
+                <thead data-theme="light">
+                    <th scope="col">Property</th>
+                    <th scope="col">Default Value</th>
+                </thead>
+                <tbody>
+                    {% for item in vanilla %}
+                    <tr>
+                        <td>{{ item.description }} <span data-tooltip="{{item.property}}"
+                                data-placement="right"><sub>(?)</sub></span></td>
+                        <td>{{ item.default }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </article>
+    </main>
+</body>
+
+</html>
