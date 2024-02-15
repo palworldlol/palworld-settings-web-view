@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: bostrt/palworld-settings-view
+          images: bostrt/palworld-settings-web-view
           tags: type=raw,value=dev
           flavor: latest=false
 
