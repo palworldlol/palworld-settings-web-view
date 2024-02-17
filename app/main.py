@@ -14,8 +14,8 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 param_lookup = {
-    "DayTimeSpeedRate": {"env": "DAYTIME_SPEEDRATE", "description": "Day time speed", "visible": True, "default": 1.0},
-    "NightTimeSpeedRate": {"env": "NIGHTTIME_SPEEDRATE", "description": "Night time speed", "visible": True, "default": 1.0},
+    "DayTimeSpeedRate": {"env": "DAYTIME_SPEEDRATE", "description": "Day time speed - Smaller number is shorter day", "visible": True, "default": 1.0},
+    "NightTimeSpeedRate": {"env": "NIGHTTIME_SPEEDRATE", "description": "Night time speed - Smaller number is shorter night", "visible": True, "default": 1.0},
     "ExpRate": {"env": "EXP_RATE", "description": "EXP rate", "visible": True, "default": 1.0},
     "PalCaptureRate": {"env": "PAL_CAPTURE_RATE", "description": "Pal capture rate", "visible": True, "default": 1.0},
     "PalSpawnNumRate": {"env": "PAL_SPAWN_NUM_RATE", "description": "Pal Appearance Rate", "visible": True, "default": 1.0},
